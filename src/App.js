@@ -1,25 +1,26 @@
-import logo from "./logo.svg";
-import "./App.css";
+import styled from 'styled-components';
 
-function App() {
+import GlobalStyles from './shared/GlobalStyles';
+import Navbar from './components/Navbar';
+import Routes from './components/Routes';
+import CompanyLogo from './assets/airballoon.svg';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyles />
+      <Navbar
+        logo={{ src: CompanyLogo, alt: 'company logo' }}
+        links={[{ title: 'About', destination: '/about' }, { title: 'FAQs', destination: '/faq' }]}
+      />
+      <MainContent>
+        <Routes />
+      </MainContent>
     </div>
   );
 }
 
-export default App;
+const MainContent = styled.main`
+  max-width: var(--maxWidth);
+  margin: 3rem auto;
+`;
