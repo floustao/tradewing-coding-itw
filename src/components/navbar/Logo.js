@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Logo({
 	// Allows extending styling with styled(Logo) constructor
@@ -25,3 +26,8 @@ export default function Logo({
 		</svg>
 	);
 }
+
+Logo.propTypes = {
+	className: PropTypes.string,
+	color: PropTypes.string,
+};

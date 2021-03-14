@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function View({ data = [] }) {
 	return (
@@ -11,3 +12,7 @@ export default function View({ data = [] }) {
 		</ul>
 	);
 }
+
+View.propTypes = {
+	data: PropTypes.array,
+};
