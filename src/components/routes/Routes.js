@@ -2,9 +2,9 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import FancyRoute from './FancyRoute';
-import Homepage from './Homepage';
-import About from './About';
-import Faq from './Faq';
+import Homepage from '../Homepage';
+import About from '../About';
+import Faq from '../Faq';
 
 export default function Routes() {
 	return (

@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
 import GlobalStyles from './shared/GlobalStyles';
-import Navbar from './components/Navbar';
-import Routes from './components/Routes';
-import CompanyLogo from './assets/airballoon.svg';
+import Navbar from './components/navbar/Navbar';
+import Routes from './components/routes/Routes';
 
 export default function App() {
 	return (
 		<div>
 			<GlobalStyles />
 			<Navbar
-				logo={{ src: CompanyLogo, alt: 'company logo' }}
 				links={[
 					{ title: 'About', destination: '/about' },
 					{ title: 'FAQs', destination: '/faq' },
