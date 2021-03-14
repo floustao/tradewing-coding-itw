@@ -4,14 +4,14 @@ import { useEffect, useReducer, useCallback } from 'react';
 import { API_STATES } from '../../shared/constants';
 
 export default function useApi(url, options) {
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, localDispatch] = useReducer(reducer, initialState);
 
 	const fetchData = useCallback(async () => {
 		try {
 			const response = await axios.get(url, options);
-			dispatch({ type: API_STATES.SUCCESS, payload: response.data });
+			localDispatch({ type: API_STATES.SUCCESS, payload: response.data });
 		} catch (error) {
-			dispatch({ type: API_STATES.ERROR, payload: error });
+			localDispatch({ type: API_STATES.ERROR, payload: error });
 		}
 	}, [url, options]);
 
@@ -34,19 +34,21 @@ const initialState = {
 	data: [],
 };
 
-const reducer = (state = initialState, action) => {
-	switch (action.type) {
+const reducer = (state = initialState, { type, payload }) => {
+	switch (type) {
 		case API_STATES.SUCCESS:
 			return {
+				...state,
 				apiState: API_STATES.SUCCESS,
-				error: '',
-				data: action.payload,
+				error: {},
+				data: payload,
 			};
 
 		case API_STATES.ERROR:
 			return {
+				...state,
 				apiState: API_STATES.ERROR,
-				error: action.payload,
+				error: payload,
 				data: [],
 			};
 
