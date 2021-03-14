@@ -1,0 +1,5 @@
+export const API_STATES = {
+	LOADING: 'LOADING',
+	SUCCESS: 'SUCCESS',
+	ERROR: 'ERROR',
+};

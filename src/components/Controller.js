@@ -1,22 +1,24 @@
 import React from 'react';
 
-import useFetchWithReducer from './hooks/useFetchWithReducer';
+import useApi from './hooks/useApi';
 import View from './View';
 import Loader from '../shared/Loader';
 import ErrorMessage from '../shared/ErrorMessage';
+import { API_STATES } from '../shared/constants';
 
 export default function Controller() {
-	const { loading, error, data } = useFetchWithReducer(
-		'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita'
+	const { apiState, error, data } = useApi(
+		'https://jsonplaceholder.typicode.com/posts'
 	);
 
-	if (loading) {
-		return <Loader />;
-	}
+	switch (apiState) {
+		case API_STATES.ERROR:
+			return <ErrorMessage error={error} />;
 
-	if (error) {
-		return <ErrorMessage error={error} />;
-	}
+		case API_STATES.SUCCESS:
+			return <View data={data} />;
 
-	return <View data={data.drinks} />;
+		default:
+			return <Loader />;
+	}
 }

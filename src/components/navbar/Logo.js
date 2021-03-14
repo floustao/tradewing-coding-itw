@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function AirBallon({
-	// Allows extending styling with styled(AirBallon) constructor
+export default function Logo({
+	// Allows extending styling with styled(Logo) constructor
 	className = '',
 
 	// default color for the fill value

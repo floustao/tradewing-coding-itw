@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import AirBalloon from './AirBalloon';
+import Logo from './Logo';
 
 export default function Navbar({ links = [] }) {
 	return (
 		<Nav>
 			<Content>
 				<Link to='/'>
-					<Logo className='company-logo' color={`var(--blue)`} />
+					<CompanyLogo className='company-logo' color={`var(--blue)`} />
 				</Link>
 
 				<NavigationItems>
@@ -57,7 +57,7 @@ const Content = styled.div`
 	max-width: var(--maxWidth);
 `;
 
-const Logo = styled(AirBalloon)`
+const CompanyLogo = styled(Logo)`
 	&.company-logo {
 		width: auto;
 		height: 2rem;
