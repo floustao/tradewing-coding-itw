@@ -2,10 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
-    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: var(--lineHeight);
     background: var(--white);
     color: var(--black);
@@ -14,19 +14,15 @@ const GlobalStyles = createGlobalStyle`
   html {
     --black: #000;
     --white: #fff;
-    --violet: #bd10e0;
-    --blue: #4a90e2;
-    --turquoise: #50e3c2;
-    --lightGreen: #b8e986;
-    --green: #7ed321;
-    --greenLeaf: #417505;
-    --yellow: #f8e71c;
-    --orange: #f5a623;
-    --grey: #9b9b9b;
+    --blue: #2F80ED;
+    --lightGray: #616A7D;
+    --lightGreyish: #F9FAFA;
+    --lightGrey: var(--lightGray);
+    --grey: #2B3C4B;
     --gray: var(--grey);
-    --bs: 0 10px 20px 0 rgba(0,0,0,0,0.9);
+    --bs: 0px 0px 4px rgba(47, 128, 237, 0.4);
     --maxWidth: 90vw;
-    --lineHeight: 1rem;
+    --lineHeight: 1.5rem;
     box-sizing: border-box;
   }
 
@@ -47,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Source Sans Pro', 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;
 

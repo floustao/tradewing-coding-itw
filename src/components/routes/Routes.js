@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import FancyRoute from './FancyRoute';
-import Homepage from '../Homepage';
+import Controller from '../Controller';
 import About from '../About';
 import Faq from '../Faq';
 
@@ -19,9 +19,9 @@ export default function Routes() {
 const ROUTES = [
 	{
 		path: '/',
-		key: 'HOMEPAGE',
+		key: 'Controller',
 		exact: true,
-		component: Homepage,
+		component: Controller,
 	},
 	{
 		path: '/about',

@@ -1,24 +1,17 @@
 import React from 'react';
+import GridCards from './GridCards';
+import SearchBar from './SearchBar';
 
-import useApi from './hooks/useApi';
-import View from './View';
-import Loader from '../shared/Loader';
-import ErrorMessage from '../shared/ErrorMessage';
-import { API_STATES } from '../shared/constants';
+import useSearchBar from '../components/hooks/useSearchBar';
 
 export default function Controller() {
-	const { apiState, error, data } = useApi(
-		'https://jsonplaceholder.typicode.com/posts'
+	const { handleChange, cards } = useSearchBar();
+	const countCards = cards.length;
+
+	return (
+		<>
+			<SearchBar onChange={handleChange} count={countCards} />
+			<GridCards cards={cards} />
+		</>
 	);
-
-	switch (apiState) {
-		case API_STATES.ERROR:
-			return <ErrorMessage error={error} />;
-
-		case API_STATES.SUCCESS:
-			return <View data={data} />;
-
-		default:
-			return <Loader />;
-	}
 }
