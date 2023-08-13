@@ -1,6 +1,6 @@
 # Boilerplate 1
 
-Boilerplate to rapidly build react apps using my favorite setup.
+Boilerplate to rapidly build react apps using my favorite setup from 2021.
 It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and customized with extra dependencies.
 
 ## Main Dependencies
